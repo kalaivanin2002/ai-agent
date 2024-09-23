@@ -42,3 +42,5 @@ PyJWT
 pyreadline3
 python-dotenv
 sniffio
+wheel==0.37.1
+setuptools==58.0.0
