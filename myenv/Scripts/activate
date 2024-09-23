@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\ACS\Documents\agent-ai\myenv"
+VIRTUAL_ENV="C:\Users\ACS\Documents\GitHub\ai-agent\myenv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
