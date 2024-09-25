@@ -21,9 +21,10 @@ export async function GET(req: NextRequest) {
   const apiSecret = process.env.LIVEKIT_API_SECRET;
   const wsUrl = process.env.NEXT_PUBLIC_LIVEKIT_URL;
 
-  console.log('WebSocket URL:', wsUrl);
+
+  console.log('WebSocket URL:', wsUrl)
   console.log('Api Secret', apiSecret)
-  
+
 
   if (!apiKey || !apiSecret || !wsUrl) {
     return NextResponse.json(
@@ -35,6 +36,7 @@ export async function GET(req: NextRequest) {
   const at = new AccessToken(apiKey, apiSecret, { identity: username });
 
   at.addGrant({ room, roomJoin: true, canPublish: true, canSubscribe: true });
-
+  console.log('Generated token:', await at.toJwt());
   return NextResponse.json({ token: await at.toJwt() });
+
 }
